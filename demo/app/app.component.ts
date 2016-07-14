@@ -21,12 +21,16 @@ export class AppComponent {
         this.todos = [
             new Todo("List todos", true), // This is done!
             new Todo("Add conditional styling", true),
-            new Todo("Mark a todo as completed", false),
+            new Todo("Mark a todo as completed", true),
             new Todo("Add a todo", false),
             new Todo("Delete a todo", false),
             new Todo("Edit a todo", false),
             new Todo("???", true), // Huh?
             new Todo("Profit", false)
         ];
+    }
+
+    toggleCompletion(todo: Todo) {
+        todo.completed = !todo.completed;
     }
 }
