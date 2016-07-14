@@ -1,0 +1,15 @@
+<section class="todoapp">
+	<header class="header">
+		<h1>todos</h1>
+	</header>
+	<section class="main">
+		<ul class="todo-list">
+			<li *ngFor="let todo of todos"
+                [class.completed]="todo.completed">
+                <div class="view">
+				    <label>{{todo.title}}</label>
+				</div>
+            </li>
+		</ul>
+	</section>
+</section>
