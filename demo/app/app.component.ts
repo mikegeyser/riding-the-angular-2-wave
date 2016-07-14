@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CreateComponent } from './create.component';
 
 class Todo {
     title: string;
@@ -12,7 +13,8 @@ class Todo {
 
 @Component({
     selector: 'todo-app',
-    templateUrl: 'app/app.template.html'
+    templateUrl: 'app/app.template.html',
+    directives: [CreateComponent]
 })
 export class AppComponent {
     todos: Todo[];
