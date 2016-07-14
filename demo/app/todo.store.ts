@@ -1,0 +1,34 @@
+export class Todo {
+    title: string;
+    completed: boolean;
+
+    constructor(title: string, completed: boolean) {
+        this.title = title;
+        this.completed = completed;
+    }
+}
+
+export class TodoStore {
+    todos: Todo[];
+
+    constructor(){
+        this.todos = [
+            new Todo("List todos", true), // This is done!
+            new Todo("Add conditional styling", true),
+            new Todo("Mark a todo as completed", true),
+            new Todo("Add a todo", true),
+            new Todo("Delete a todo", false),
+            new Todo("Edit a todo", false),
+            new Todo("???", true), // Huh?
+            new Todo("Profit", false)
+        ];
+    }
+
+    create(title: string) {
+        this.todos.push(new Todo(title, false));
+    }
+
+    toggleCompletion(todo: Todo) {
+        todo.completed = !todo.completed;
+    }
+}

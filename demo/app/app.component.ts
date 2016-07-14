@@ -1,15 +1,6 @@
 import { Component } from '@angular/core';
+import { Todo, TodoStore } from './todo.store';
 import { CreateComponent } from './create.component';
-
-class Todo {
-    title: string;
-    completed: boolean;
-
-    constructor(title: string, completed: boolean) {
-        this.title = title;
-        this.completed = completed;
-    }
-}
 
 @Component({
     selector: 'todo-app',
@@ -18,21 +9,14 @@ class Todo {
 })
 export class AppComponent {
     todos: Todo[];
+    todoStore: TodoStore;
 
-    constructor() {
-        this.todos = [
-            new Todo("List todos", true), // This is done!
-            new Todo("Add conditional styling", true),
-            new Todo("Mark a todo as completed", true),
-            new Todo("Add a todo", false),
-            new Todo("Delete a todo", false),
-            new Todo("Edit a todo", false),
-            new Todo("???", true), // Huh?
-            new Todo("Profit", false)
-        ];
+    constructor(todoStore: TodoStore) {
+        this.todoStore = todoStore;
+        this.todos = todoStore.todos;
     }
 
     toggleCompletion(todo: Todo) {
-        todo.completed = !todo.completed;
+        this.todoStore.toggleCompletion(todo);
     }
 }

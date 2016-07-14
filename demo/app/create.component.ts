@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoStore } from './todo.store';
 
 @Component({
     selector: 'create-todo',
@@ -6,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class CreateComponent {
     title: string;
+    todoStore: TodoStore;
+
+    constructor(todoStore: TodoStore){
+        this.todoStore = todoStore;
+    }
 
     create() {
-        
+        this.todoStore.create(this.title);
+        this.title = '';
     }
 }
