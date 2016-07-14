@@ -1,10 +1,12 @@
 export class Todo {
     title: string;
     completed: boolean;
+    editing: boolean;
 
     constructor(title: string, completed: boolean) {
         this.title = title;
         this.completed = completed;
+        this.editing = false;
     }
 }
 
@@ -18,7 +20,7 @@ export class TodoStore {
             new Todo("Mark a todo as completed", true),
             new Todo("Add a todo", true),
             new Todo("Delete a todo", true),
-            new Todo("Edit a todo", false),
+            new Todo("Edit a todo", true),
             new Todo("???", true), // Huh?
             new Todo("Profit", false)
         ];
