@@ -11,13 +11,13 @@ export class Todo {
 export class TodoStore {
     todos: Todo[];
 
-    constructor(){
+    constructor() {
         this.todos = [
             new Todo("List todos", true), // This is done!
             new Todo("Add conditional styling", true),
             new Todo("Mark a todo as completed", true),
             new Todo("Add a todo", true),
-            new Todo("Delete a todo", false),
+            new Todo("Delete a todo", true),
             new Todo("Edit a todo", false),
             new Todo("???", true), // Huh?
             new Todo("Profit", false)
@@ -26,6 +26,10 @@ export class TodoStore {
 
     create(title: string) {
         this.todos.push(new Todo(title, false));
+    }
+
+    remove(todo: Todo) {
+        this.todos.splice(this.todos.indexOf(todo), 1);
     }
 
     toggleCompletion(todo: Todo) {
