@@ -1,0 +1,22 @@
+Riding the Angular 2 Wave:
+- What is Angular 2
+- The hype is real
+- What this talk will cover
+    - Typescript
+    - Module loading with SystemJs
+    - Components
+    - Property and event binding
+    - Component hierarchies
+- What this talk will not cover
+    - Component Routing
+    - Observables
+    - Angular Universal
+    - Angular CLI
+- Tooling
+    - NodeJS + NPM
+    - Typescript
+    - Visual Studio Code + BrowserSync
+    - Augury
+- The TypeScript conundrum
+- Demo
+- Questions?
